@@ -1,0 +1,61 @@
+*** Settings ***
+Library           Selenium2Library
+
+*** Test Cases ***
+login-mjjre
+    Open Browser    https://mjj.re/user/login.php
+    Maximize Browser Window
+    Input Text    id=email    839623781@qq.com
+    Input Text    id=password    abc1234567890
+    sleep    3
+    Click Button    id=login
+    sleep    5
+    Wait Until Page Contains Element    xpath=.//*[@class='black-text']
+    Wait Until Page Contains Element    xpath=.//*[@class='black-text']/p[2]/a
+    Click Button    xpath=.//*[@class='black-text']/p[2]/a
+    sleep    10
+    Close Browser
+
+login-cccatcc
+    Open Browser    https://cccat.cc/user/login.php
+    Maximize Browser Window
+    Input Text    id=email    839623781@qq.com
+    Input Text    id=passwd    abc12345678
+    sleep    3
+    Click Button    id=login
+    sleep    5
+    Wait Until Page Contains Element    xpath=.//*[@class='box-body']
+    Wait Until Page Contains Element    xpath=.//*[@id='checkin']
+    Click Button    id=checkin
+    Confirm Action
+    sleep    10
+    Close Browser
+
+login-v2dn
+    Open Browser    http://v2dn.net/login.php
+    Maximize Browser Window
+    Input Text    id=textfield    839623781@qq.com
+    Input Text    id=textfield2    nba123bbc
+    sleep    3
+    Click Button    id=button
+    sleep    5
+    Wait Until Page Contains Element    xpath=.//*[@class='mui-panel']
+    Wait Until Page Contains Element    xpath=.//*[@class='mui-panel']/div[2]/h6/a
+    Click Link    xpath=.//*[@class='mui-panel']/div[2]/h6/a
+    sleep    10
+    Close Browser
+
+login-czyaer
+    Open Browser    https://ss.czyaer.me/user/login.php
+    Maximize Browser Window
+    Input Text    id=email    839623781@qq.com
+    Input Text    id=passwd    abc12345678
+    sleep    3
+    Click Button    id=login
+    sleep    10
+    Wait Until Page Contains Element    xpath=.//*[@class='box-body']
+    Wait Until Page Contains Element    xpath=.//*[@id='checkin']
+    Click Button    id=checkin
+    Confirm Action
+    sleep    10
+    Close Browser

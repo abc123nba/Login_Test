@@ -1,0 +1,10 @@
+*** Settings ***
+Library           Selenium2Library
+
+*** Test Cases ***
+scrollcase
+
+*** Keywords ***
+Scroll Page To Location
+    [Arguments]    ${x_location}    ${y_location}
+    Execute Javascript    window.scrollTo(${x_location},${y_location})
