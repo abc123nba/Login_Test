@@ -1,0 +1,12 @@
+*** Settings ***
+Library           Selenium2Library
+
+*** Test Cases ***
+search
+    Open Browser    http://www.baidu.com    firefox
+    sleep    2
+    Input Text    id=kw    robotframework
+    sleep    2
+    Click Element    su
+    sleep    5
+    Close Browser
